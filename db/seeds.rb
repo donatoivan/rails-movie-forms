@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Start of Seeding..."
+
+50.times do
+  params = {
+    title: Faker::Book.unique.title,
+    description: Faker::Lorem.paragraph,
+    rating: rand(10)
+  }
+  puts "Creating Movie: #{params}"
+  movie = Movie.new(params)
+  movie.save
+end
+
+puts "Seeding Over"

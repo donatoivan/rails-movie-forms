@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<h2><%= @movie["title"] %></h2>
+
+<h2><%= @movie["description"] %></h2>
+
+<h3>Rating</h3>
+<p><%= @movie["rating"] %></p>
+
+<%= link_to "Back", :back %>
+
+<%= link_to "Edit", edit_movie_path %>

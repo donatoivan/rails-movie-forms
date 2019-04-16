@@ -1,0 +1,14 @@
+<ul>
+    <% @movies.each_with_index do |movie, index| %>
+        <p>
+            <%= movie.title %> - <%= movie.rating %> 
+            <%= link_to "show", movie_path(movie) %>
+            <%= link_to "edit", edit_movie_path(movie) %>
+            <%= link_to 'delete', movie_path(movie),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+        </p>
+    <% end %>
+</ul>
+
+<%= link_to "Creat New Movie", new_movie_path %>
